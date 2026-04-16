@@ -1,4 +1,4 @@
-import { Edit, Trash2 } from 'lucide-react';
+import { Edit, ShoppingCartIcon, Trash2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import type Produtos from '../../../models/Produtos';
 
@@ -9,7 +9,7 @@ interface CardProdutoProps {
 
 function CardProduto({ produto }: CardProdutoProps) {
   return (
-    <div className="group relative bg-white border border-gray-100 rounded-[2rem] overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col h-full shadow-sm">
+    <div className="group relative bg-white border border-gray-100 rounded-4xl overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col h-full shadow-sm">
       {/* Imagem do Produto */}
       <div className="relative h-56 overflow-hidden">
         <img 
@@ -39,7 +39,7 @@ function CardProduto({ produto }: CardProdutoProps) {
       </div>
 
       {/* Conteúdo */}
-      <div className="p-6 flex flex-col flex-grow">
+      <div className="p-6 flex flex-col grow">
         <div className="flex justify-between items-start mb-2">
           <h3 className="text-xl font-bold text-[#1a3c1a] group-hover:text-brand-medium transition-colors">
             {produto.nome}
@@ -49,7 +49,7 @@ function CardProduto({ produto }: CardProdutoProps) {
           </span>
         </div>
         
-        <p className="text-[#4a5c4a] text-sm line-clamp-2 mb-4 flex-grow">
+        <p className="text-[#4a5c4a] text-sm line-clamp-2 mb-4 grow">
           {produto.descricao}
         </p>
 
@@ -58,8 +58,9 @@ function CardProduto({ produto }: CardProdutoProps) {
             <span className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Energia</span>
             <span className="text-sm font-medium text-[#1a3c1a]">{produto.caloria} kcal</span>
           </div>
-          <button className="px-4 py-2 bg-brand-dark text-white text-xs font-bold rounded-lg hover:bg-brand-medium transition-all duration-300">
-            Adicionar ao Plano
+          <button className=" flex justify-center items-center px-4 py-2 bg-brand-dark text-white text-xs font-bold rounded-lg hover:bg-brand-medium transition-all duration-300">
+           <ShoppingCartIcon size={20} />
+          <span className='mx-2'> Adicionar </span>
           </button>
         </div>
       </div>

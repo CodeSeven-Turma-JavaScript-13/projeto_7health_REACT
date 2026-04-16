@@ -1,11 +1,15 @@
-import {  useEffect, useState, type ChangeEvent } from "react";
+import { useEffect, useState, type ChangeEvent } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import type Categoria from "../../../models/Categoria";
 import type Produtos from "../../../models/Produtos";
 import { atualizar, buscar, cadastrar } from "../../../services/Services";
 import { Loader2 } from "lucide-react";
 
-function FormProduto() {
+interface FormProdutoProps {
+  onSuccess?: () => void;
+}
+
+function FormProduto({ onSuccess }: FormProdutoProps) {
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
 
@@ -71,15 +75,15 @@ function FormProduto() {
         await atualizar(`/produtos`, produto, setProduto);
         alert("Produto atualizado com sucesso");
         retornar();
-      } catch (error: any) {
+      } catch {
         alert("Erro ao atualizar o Produto");
       }
     } else {
       try {
         await cadastrar(`/produtos`, produto, setProduto);
         alert("Produto cadastrado com sucesso");
-        retornar();
-      } catch (error: any) {
+        onSuccess?.();
+      } catch {
         alert("Erro ao cadastrar o Produto");
       }
     }
@@ -120,7 +124,7 @@ function FormProduto() {
             placeholder="Descreva o produto, ingredientes e benefícios..."
             name="descricao"
             required
-            className="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-brand-dark focus:ring-2 focus:ring-[#b5f49d] outline-none transition-all min-h-[120px] placeholder:text-slate-300"
+            className="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-brand-dark focus:ring-2 focus:ring-[#b5f49d] outline-none transition-all min-h-30 placeholder:text-slate-300"
           />
         </div>
 
@@ -169,21 +173,21 @@ function FormProduto() {
           <label className="text-slate-600 font-bold uppercase text-xs tracking-widest pl-1">Categoria do Produto</label>
           <div className="relative">
             <select
-                name="categoria"
-                className="w-full p-4 pr-10 rounded-2xl bg-slate-50 text-brand-dark border border-slate-100 focus:ring-2 focus:ring-[#b5f49d] outline-none transition-all font-medium appearance-none"
-                onChange={(e) => buscar(`/categorias/${e.currentTarget.value}`, setCategoria)}
+              name="categoria"
+              className="w-full p-4 pr-10 rounded-2xl bg-slate-50 text-brand-dark border border-slate-100 focus:ring-2 focus:ring-[#b5f49d] outline-none transition-all font-medium appearance-none"
+              onChange={(e) => buscar(`/categorias/${e.currentTarget.value}`, setCategoria)}
             >
-                <option value="" disabled>
+              <option value="" disabled>
                 Selecione uma categoria
-                </option>
-                {categorias.map((categoria) => (
+              </option>
+              {categorias.map((categoria) => (
                 <option key={categoria.id} value={categoria.id} selected={produto.categoria?.id === categoria.id}>
-                    {categoria.nome}
+                  {categoria.nome}
                 </option>
-                ))}
+              ))}
             </select>
             <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
-                ↓
+              ↓
             </div>
           </div>
         </div>
@@ -191,14 +195,19 @@ function FormProduto() {
         <button
           type="submit"
           disabled={carregandoCategoria || loading}
-          className="mt-4 flex justify-center items-center bg-brand-dark hover:bg-brand-medium text-white font-bold py-5 rounded-2xl shadow-xl shadow-brand-dark/10 transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed group"
+          className="mt-4 flex justify-center items-center
+                   bg-brand-dark hover:bg-brand-medium
+                   text-white font-bold py-5 rounded-2xl 
+                   shadow-xl shadow-brand-dark/10 transition-all 
+                   active:scale-[0.98] disabled:opacity-50 
+                   disabled:cursor-not-allowed group"
         >
           {loading ? (
             <Loader2 className="animate-spin" size={24} />
           ) : (
             <span className="flex items-center gap-2">
-                {id !== undefined ? "Salvar Alterações" : "Publicar no Menu"}
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
+              {id !== undefined ? "Salvar Alterações" : "Publicar no Menu"}
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
             </span>
           )}
         </button>
