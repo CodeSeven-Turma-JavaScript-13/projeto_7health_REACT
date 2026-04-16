@@ -42,7 +42,7 @@ function DeletarCategoria() {
   }
 
   return (
-    <div className="container w-full max-w-lg mx-auto mt-20 p-4">
+    <div className="min-h-screen bg-[#f9fbf7] flex items-center justify-center py-20 px-4">
       <div className="bg-white border border-gray-100 rounded-[2.5rem] overflow-hidden shadow-2xl">
         <div className="bg-red-50 p-6 border-b border-red-100 flex items-center justify-between">
             <h2 className="text-2xl font-bold text-red-600">Excluir Categoria</h2>

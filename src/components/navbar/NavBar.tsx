@@ -5,7 +5,14 @@ function NavBar() {
   const location = useLocation();
   
   // Define quais rotas devem usar o tema claro
-  const isLightPage = location.pathname === "/contato" || location.pathname === "/sobre" || location.pathname === "/categorias";
+  const isLightPage = location.pathname === "/contato" || 
+                      location.pathname === "/sobre" || 
+                      location.pathname.startsWith("/categorias") ||
+                      location.pathname.startsWith("/cardapio") ||
+                      location.pathname.startsWith("/editar") ||
+                      location.pathname.startsWith("/deletar") ||
+                      location.pathname.startsWith("/cadastrar");
+
   
   // Classes condicionais baseadas no tema
   const navClasses = isLightPage 
