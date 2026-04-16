@@ -1,4 +1,5 @@
-import { Calendar, ChartLineUp, Clock, Leaf, Medal, RocketLaunch } from "@phosphor-icons/react";
+import { ChartLineUp, Clock, Leaf, Medal, RocketLaunchIcon } from "@phosphor-icons/react";
+import { LeafIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
 function Home() {
@@ -8,15 +9,15 @@ function Home() {
       <section className="relative min-h-[calc(100vh-112px)] flex items-center justify-center overflow-hidden bg-brand-dark">
         {/* Background Patterns (Replicating Image 1) */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-medium/20 rounded-full blur-3xl" />
-          <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] border border-brand-light/10 rounded-full" />
-          <div className="absolute top-1/3 left-1/3 w-[600px] h-[600px] border border-brand-light/5 rounded-full" />
-          <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] border border-brand-light/10 rounded-full" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 bg-brand-medium/20 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 left-1/4 w-200 h-200 border border-brand-light/10 rounded-full" />
+          <div className="absolute top-1/3 left-1/3 w-150 h-150 border border-brand-light/5 rounded-full" />
+          <div className="absolute bottom-1/4 right-1/4 w-125 h-125 border border-brand-light/10 rounded-full" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
-          <div className="mb-8 inline-flex items-center gap-2 px-4 py-2 glass rounded-full text-brand-light text-sm font-medium animate-bounce">
-            <RocketLaunch weight="fill" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center mb-16">
+          <div className="mb-8 inline-flex items-center gap-2 mt-10 px-4 py-2 glass rounded-full text-brand-light text-sm font-medium animate-bounce">
+            <RocketLaunchIcon weight="fill" />
             <span>Aplicativo de Delivery Fitness</span>
           </div>
           
@@ -26,10 +27,10 @@ function Home() {
             </h1>
             <div className="flex items-center justify-center gap-2 text-2xl md:text-3xl font-bold text-brand-light">
               <span className="tracking-[0.2em]">SEVEN HEALTH</span>
-              <Leaf weight="fill" className="text-brand-accent" />
+              <LeafIcon height="fill" className="text-brand-accent" />
             </div>
             
-            <div className="w-48 h-1 bg-gradient-to-r from-transparent via-brand-light/30 to-transparent mx-auto mt-8 mb-8" />
+            <div className="w-48 h-1 bg-linear-to-r from-transparent via-brand-light/30 to-transparent mx-auto mt-8 mb-8" />
             
             <p className="text-xl md:text-2xl text-white/80 font-medium max-w-2xl mx-auto leading-relaxed">
               Seu aliado em uma alimentação saudável e fitness
@@ -46,10 +47,6 @@ function Home() {
             <button className="glass px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all">
               Saiba Mais
             </button>
-          </div>
-          
-          <div className="mt-24 text-white/40 text-sm font-medium">
-            Generation Brasil • Grupo 05 • Desafio 02 • Projeto Integrador
           </div>
         </div>
       </section>
@@ -125,4 +122,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Home;
