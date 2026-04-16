@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter>
       <div className="flex flex-col min-h-screen bg-brand-dark overflow-x-hidden">
         <NavBar />
-        <main className="flex-grow pt-28">
+        <main className="grow pt-28">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contato" element={<Contatos />} />

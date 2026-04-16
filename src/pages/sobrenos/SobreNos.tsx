@@ -1,5 +1,6 @@
 import React from 'react';
 import { Leaf, Code, Smartphone, Users } from 'lucide-react';
+import { BarbellIcon } from '@phosphor-icons/react';
 
 function SobreNos() {
   const teamImages = [
@@ -49,7 +50,7 @@ function SobreNos() {
       <div className="md:col-span-2 bg-[#f1f3ee] rounded-3xl overflow-hidden flex flex-col shadow-sm">
         <div className="p-10">
           <div className="mb-8">
-            <Users className="mb-4 text-[#2d5a27]" size={32} />
+            <Users className="mb-4 text-brand-medium" size={32} />
             <h3 className="text-3xl font-bold mb-3 text-[#1a3c1a]">7 Mentes</h3>
             <p className="text-[#4a5c4a] text-lg">
               Nosso time une expertise em infraestrutura visual, saúde móvel e ciência de dados para sua performance.
@@ -87,7 +88,7 @@ function SobreNos() {
             alt="Coding for Wellness"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1a3c1a]/40 to-transparent flex items-center p-10">
+          <div className="absolute inset-0 bg-linear-to-r from-[#1a3c1a]/40 to-transparent flex items-center p-10">
             <span className="text-white text-sm font-medium italic max-w-xs">
               "Codando para o bem-estar, desenhado para humanos."
             </span>
@@ -98,12 +99,12 @@ function SobreNos() {
       {/* Coluna Lateral: Metodologia */}
       <div className="flex flex-col gap-8">
         <div className="bg-[#f1f3ee] p-8 rounded-3xl flex-1 border border-transparent hover:border-[#b5f49d] transition-all shadow-sm group">
-          <span className="text-4xl font-bold text-[#b5f49d] group-hover:text-[#2d5a27] transition-colors">01</span>
+          <span className="text-4xl font-bold text-[#b5f49d] group-hover:text-brand-medium transition-colors">01</span>
           <h4 className="text-xl font-bold mt-2 text-[#1a3c1a]">Saúde Ágil</h4>
           <p className="text-sm text-[#4a5c4a] mt-2">Ciclos de desenvolvimento iterativos garantindo a mais alta qualidade em entrega de software.</p>
         </div>
         <div className="bg-[#f1f3ee] p-8 rounded-3xl flex-1 border border-transparent hover:border-[#b5f49d] transition-all shadow-sm group">
-          <span className="text-4xl font-bold text-[#b5f49d] group-hover:text-[#2d5a27] transition-colors">02</span>
+          <span className="text-4xl font-bold text-[#b5f49d] group-hover:text-brand-medium transition-colors">02</span>
           <h4 className="text-xl font-bold mt-2 text-[#1a3c1a]">Arquitetura Limpa</h4>
           <p className="text-sm text-[#4a5c4a] mt-2">Construindo sistemas resilientes que protegem os dados dos pacientes e garantem atualizações fluidas.</p>
         </div>
@@ -111,7 +112,7 @@ function SobreNos() {
           href="https://github.com/CodeSeven-Turma-JavaScript-13" 
           target="_blank"
           rel="noreferrer"
-          className="bg-[#1a3c1a] hover:bg-[#2d5a27] text-white p-8 rounded-3xl flex items-center justify-between group transition-all shadow-lg active:scale-95"
+          className="bg-[#1a3c1a] hover:bg-brand-medium text-white p-8 rounded-3xl flex items-center justify-between group transition-all shadow-lg active:scale-95"
         >
           <span className="text-xl font-bold">Time no GitHub</span>
           <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
@@ -124,24 +125,19 @@ function SobreNos() {
       {/* SEÇÃO 3: ECOSSISTEMA E 7FIT */}
       <section className="py-24 px-6 max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center">
         <div className="flex-1 relative">
-          <div className="w-64 h-[500px] bg-black rounded-[3rem] border-8 border-gray-800 shadow-2xl mx-auto relative overflow-hidden">
+          <div className="w-64 h-125 bg-black rounded-[3rem] border-8 border-gray-800 shadow-2xl mx-auto relative overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1510017803434-a899398421b3?auto=format&fit=crop&q=80&w=400" 
+              src="https://ik.imagekit.io/Outwake/imagens/Code7/imagem_2026-04-16_180342956.png" 
               alt="App Screenshot" 
               className="w-full h-full object-cover opacity-80"
             />
-            <div className="absolute inset-0 flex items-center justify-center">
-               <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl text-white text-center">
-                  <Smartphone size={40} className="mx-auto mb-2" />
-                  <p className="text-xs font-bold">7Health App</p>
-               </div>
-            </div>
+            
           </div>
           <div className="absolute top-1/2 -right-4 bg-white p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce">
             <div className="bg-[#b5f49d] p-2 rounded-lg text-[#1a3c1a]">
-              <Leaf size={20} />
+              <BarbellIcon size={20} />
             </div>
-            <span className="text-xs font-bold uppercase">Nutrição Ativa</span>
+            <span className="text-xs font-bold uppercase">Rotina Saudável</span>
           </div>
         </div>
 
@@ -163,13 +159,13 @@ function SobreNos() {
                 <Smartphone className="text-[#1a3c1a]" size={24} />
               </div>
               <div>
-                <h4 className="font-bold text-xl text-[#2d5a27]">Conheça o 7FIT</h4>
+                <h4 className="font-bold text-xl text-brand-medium">Conheça o 7FIT</h4>
                 <p className="text-[#4a5c4a] mb-4">Sincronize sua rotina de treinos e regimes botânicos com nossa plataforma social de atividades físicas.</p>
                 <a 
                   href="https://7fit-react.vercel.app/" 
                   target="_blank" 
                   rel="noreferrer"
-                  className="text-[#1a3c1a] font-bold underline hover:text-[#2d5a27] transition-colors"
+                  className="text-[#1a3c1a] font-bold underline hover:text-brand-medium transition-colors"
                 >
                   Visite o 7Fit →
                 </a>
@@ -181,8 +177,8 @@ function SobreNos() {
 
       {/* SEÇÃO FINAL: CTA */}
       <section className="px-6 pb-20">
-        <div className="max-w-7xl mx-auto bg-gradient-to-br from-[#2d5a27] to-[#1a3c1a] rounded-[3rem] p-16 text-center text-white shadow-2xl">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 italic">Pronto para começar sua jornada botânica?</h2>
+        <div className="max-w-7xl mx-auto bg-linear-to-br from-brand-medium to-[#1a3c1a] rounded-[3rem] p-16 text-center text-white shadow-2xl">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 italic">Pronto para começar sua jornada?</h2>
           <p className="text-gray-300 mb-10 text-lg max-w-2xl mx-auto">
             Junte-se à 7Health hoje e transforme sua rotina diária de bem-estar em um estilo de vida consciente.
           </p>

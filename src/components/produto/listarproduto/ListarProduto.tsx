@@ -4,11 +4,16 @@ import { buscar } from "../../../services/Services";
 import CardProduto from "../cardproduto/CardProduto";
 import { Loader2 } from "lucide-react";
 
-function ListarProduto() {
+interface ListarProdutoProps {
+  refresh?: number;
+}
+
+function ListarProduto({ refresh }: ListarProdutoProps) {
   const [produtos, setProdutos] = useState<Produtos[]>([]);
   const [loading, setLoading] = useState(true);
 
   async function buscarProdutos() {
+    setLoading(true);
     try {
       await buscar('/produtos', setProdutos);
     } catch (error) {
@@ -20,7 +25,7 @@ function ListarProduto() {
 
   useEffect(() => {
     buscarProdutos();
-  }, []);
+  }, [refresh]);
 
   return (
     <div className="w-full">
