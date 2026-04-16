@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-dark pt-20">
+      <section className="relative min-h-[calc(100vh-112px)] flex items-center justify-center overflow-hidden bg-brand-dark">
         {/* Background Patterns (Replicating Image 1) */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-medium/20 rounded-full blur-3xl" />
@@ -55,7 +55,7 @@ function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-white text-brand-dark px-4">
+      <section className="py-24 bg-brand-soft text-brand-dark px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-4">Por que escolher a 7Health?</h2>

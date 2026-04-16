@@ -5,6 +5,7 @@
   --color-brand-medium: #2d5a27;
   --color-brand-light: #4ade80;
   --color-brand-accent: #8bf0b2;
+  --color-brand-soft: #f9faf2;
   
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 }
@@ -18,5 +19,9 @@
 @layer utilities {
   .glass {
     @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .glass-light {
+    @apply bg-white/40 backdrop-blur-md border border-brand-dark/10;
   }
 }
