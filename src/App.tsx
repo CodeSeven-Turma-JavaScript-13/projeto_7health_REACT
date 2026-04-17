@@ -13,10 +13,13 @@ import DeletarCategoria from "./components/categoria/deletarcategoria/DeletarCat
 import NavBar from "./components/navbar/NavBar";
 import { CartProvider } from "./components/carrinho/contexts/CartContext";
 import Cart from "./components/carrinho/cart/Cart";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
+    
     <CartProvider>
+      <ToastContainer/>
     <BrowserRouter>
       <div className="flex flex-col min-h-screen bg-brand-dark overflow-x-hidden">
        <NavBar />
