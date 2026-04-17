@@ -1,16 +1,16 @@
 import React from 'react';
-import { RocketLaunch, Leaf } from '@phosphor-icons/react';
+import { RocketLaunch, Leaf, RocketLaunchIcon, LeafIcon } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
 
 function Slide1() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section - Fundo verde escuro conforme Slide03 */}
-      <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-[#1a3c1a]">
+      <section className="relative min-h-[600px] flex flex-col items-center justify-center overflow-hidden bg-[#1a3c1a] py-24 pb-32">
         
         {/* Elemento Decorativo: Folha gigante no fundo (Igual Slide03) */}
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 z-0 pointer-events-none">
-          <Leaf size={500} weight="fill" className="rotate-45 translate-x-1/3 -translate-y-1/4 text-white" />
+          <LeafIcon size={500} weight="fill" className="rotate-45 translate-x-1/3 -translate-y-1/4 text-white" />
         </div>
 
         {/* Círculos de fundo mantidos para profundidade */}
@@ -23,11 +23,11 @@ function Slide1() {
             Subimos o conteúdo com '-translate-y-20' para garantir que os botões 
             fiquem longe dos indicadores inferiores.
         */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center -translate-y-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
           
           {/* Badge Superior mais compacto */}
           <div className="mb-6 inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-[#b5f49d] text-xs font-bold uppercase tracking-widest">
-            <RocketLaunch weight="fill" size={14} />
+            <RocketLaunchIcon weight="fill" size={14} />
             <span>Aplicativo de Delivery Fitness</span>
           </div>
           
@@ -63,12 +63,6 @@ function Slide1() {
           </div>
         </div>
 
-        {/* Indicadores (Dots) - Agora com espaço garantido */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-3 z-20">
-          <div className="w-3 h-3 rounded-full bg-white shadow-lg" />
-          <div className="w-3 h-3 rounded-full bg-white/20" />
-          <div className="w-3 h-3 rounded-full bg-white/20" />
-        </div>
       </section>
     </div>
   );

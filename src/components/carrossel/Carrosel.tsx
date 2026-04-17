@@ -105,7 +105,7 @@ function Carrossel() {
 	}
 
 	return (
-		<div className="relative md:max-h-[70vh] max-h-[50vh]">
+		<div className="relative">
 			{/* 
 				Container principal do carrossel
 				
@@ -128,24 +128,24 @@ function Carrossel() {
 				ref={emblaRef}
 			>
 				{/* Container dos slides */}
-				<div className="flex flex-cols">
+				<div className="flex">
 					{/* Slide 1 */}
 					<div className="flex-[0_0_100%]">
-						<article className="overflow-hidden max-h-[70vh] flex flex-col">
+						<article className="flex flex-col w-full">
 							<Slide01 />
 						</article>
 					</div>
 					
 					{/* Slide 2 */}
 					<div className="flex-[0_0_100%]">
-						<article className="overflow-hidden max-h-[70vh] flex flex-col">
+						<article className="flex flex-col">
 							<Slide2 />
 						</article>
 					</div>
 					
 					{/* Slide 3 */}
 					<div className="flex-[0_0_100%]">
-						<article className="overflow-hidden max-h-[70vh] flex flex-col">
+						<article className="flex flex-col w-full">
 							<Slide03 />
 						</article>
 					</div>
