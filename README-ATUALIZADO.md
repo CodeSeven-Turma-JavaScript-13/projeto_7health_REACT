@@ -20,11 +20,14 @@ O **7Health** é um aplicativo de delivery fitness desenvolvido para pessoas que
  
 
 
+
+
 📌 Home
 
 <div align="center">
-  	<img src="https://ik.imagekit.io/o02kjfcyy/Integrantes%20Code7/image.png" title="source: imagekit.io" width="100%"/>
+  	<img src="https://ik.imagekit.io/o02kjfcyy/Integrantes%20Code7/Captura%20de%20tela%202026-04-17%20182805.png" title="source: imagekit.io" width="100%"/>
   </div>
+
 
 
 
@@ -32,8 +35,11 @@ O **7Health** é um aplicativo de delivery fitness desenvolvido para pessoas que
 📌 Cardápios de recomendações (Funcionalidade especial)
 
 <div align="center">
-  	<img src="https://ik.imagekit.io/o02kjfcyy/Integrantes%20Code7/image.png?updatedAt=1776395805359" width="100%"/>
+  	<img src="https://ik.imagekit.io/o02kjfcyy/Integrantes%20Code7/image%20(2).png" width="100%"/>
   </div>
+
+
+
 
 
 
