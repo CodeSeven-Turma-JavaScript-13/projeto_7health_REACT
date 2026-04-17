@@ -4,6 +4,7 @@ import type Categoria from "../../../models/Categoria";
 import type Produtos from "../../../models/Produtos";
 import { atualizar, buscar, cadastrar } from "../../../services/Services";
 import { Loader2 } from "lucide-react";
+import { ToastAlerta } from "../../../util/ToastAlerta";
 
 interface FormProdutoProps {
   onSuccess?: () => void;
@@ -31,7 +32,7 @@ function FormProduto({ onSuccess }: FormProdutoProps) {
     imagem: "",
     usuario: null,
     categoria: null,
-  });
+  } as Produtos);
 
   async function buscarProdutoPorId(id: string) {
     await buscar(`/produtos/${id}`, setProduto);
@@ -73,18 +74,18 @@ function FormProduto({ onSuccess }: FormProdutoProps) {
     if (id !== undefined) {
       try {
         await atualizar(`/produtos`, produto, setProduto);
-        alert("Produto atualizado com sucesso");
+        ToastAlerta("Produto atualizado com sucesso", 'sucesso');
         retornar();
       } catch {
-        alert("Erro ao atualizar o Produto");
+        console.log("Erro ao atualizar o Produto");
       }
     } else {
       try {
         await cadastrar(`/produtos`, produto, setProduto);
-        alert("Produto cadastrado com sucesso");
+        ToastAlerta("Produto cadastrado com sucesso", "sucesso");
         onSuccess?.();
       } catch {
-        alert("Erro ao cadastrar o Produto");
+        console.log("Erro ao cadastrar o Produto");
       }
     }
 

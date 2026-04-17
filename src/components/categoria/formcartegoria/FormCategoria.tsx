@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import type Categoria from "../../../models/Categoria";
 import { atualizar, buscar, cadastrar } from "../../../services/Services";
 import { Loader2 } from "lucide-react";
+import { ToastAlerta } from "../../../util/ToastAlerta";
 
 function FormCategoria() {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ function FormCategoria() {
     try {
         await buscar(`/categorias/${id}`, setCategoria);
     } catch (error) {
-        alert("Erro ao buscar categoria");
+        console.log("Erro ao buscar categoria", "error");
     }
   }
 
@@ -48,18 +49,18 @@ function FormCategoria() {
     if (id !== undefined) {
       try {
         await atualizar(`/categorias`, categoria, setCategoria);
-        alert("Categoria atualizada com sucesso");
+        ToastAlerta("Categoria atualizada com sucesso", "sucesso");
         retornar();
       } catch (error: any) {
-        alert("Erro ao atualizar a Categoria");
+        console.log("Erro ao atualizar a Categoria", error);
       }
     } else {
       try {
         await cadastrar(`/categorias`, categoria, setCategoria);
-        alert("Categoria cadastrada com sucesso");
+        ToastAlerta("Categoria cadastrada com sucesso", "sucesso");
         retornar();
       } catch (error: any) {
-        alert("Erro ao cadastrar a Categoria");
+        console.log("Erro ao cadastrar a Categoria", error);
       }
     }
 

@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import type Produtos from "../../../models/Produtos";
 import { buscar, deletar } from "../../../services/Services";
 import { Loader2, Trash2, X } from "lucide-react";
+import { ToastAlerta } from "../../../util/ToastAlerta";
 
 function DeletarProduto() {
   const navigate = useNavigate();
@@ -29,10 +30,10 @@ function DeletarProduto() {
     setLoading(true);
     try {
       await deletar(`/produtos/${id}`);
-      alert("Produto apagado com sucesso");
+      ToastAlerta("Produto apagado com sucesso", "sucesso");
       retornar();
     } catch (error) {
-      alert("Erro ao apagar o Produto");
+      console.log("Erro ao apagar o Produto", error);
     }
     setLoading(false);
   }

@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import type Categoria from "../../../models/Categoria";
 import { buscar, deletar } from "../../../services/Services";
 import { Loader2, Trash2, X } from "lucide-react";
+import { ToastAlerta } from "../../../util/ToastAlerta";
 
 function DeletarCategoria() {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ function DeletarCategoria() {
     try {
       await buscar(`/categorias/${id}`, setCategoria);
     } catch (error: any) {
-      alert("Erro ao buscar a categoria");
+      console.log("Erro ao buscar a categoria", error);
     }
   }
 
@@ -29,10 +30,10 @@ function DeletarCategoria() {
     setLoading(true);
     try {
       await deletar(`/categorias/${id}`);
-      alert("Categoria apagada com sucesso");
+      ToastAlerta("Categoria apagada com sucesso", "sucesso");
       retornar();
     } catch (error) {
-      alert("Erro ao apagar a Categoria");
+      console.log("Erro ao apagar a Categoria", error);
     }
     setLoading(false);
   }
