@@ -1,20 +1,15 @@
 import { Leaf, List, ShoppingCart, User } from "@phosphor-icons/react";
 import { Link, useLocation } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../carrinho/contexts/CartContext";
+
 
 function NavBar() {
   const location = useLocation();
+  const { quantidadeItens } = useContext(CartContext);
   
-  // Define quais rotas devem usar o tema claro
-  const isLightPage = location.pathname === "/contato" || 
-                      location.pathname === "/sobre" || 
-                      location.pathname.startsWith("/categorias") ||
-                      location.pathname.startsWith("/cardapio") ||
-                      location.pathname.startsWith("/editar") ||
-                      location.pathname.startsWith("/deletar") ||
-                      location.pathname.startsWith("/cadastrar");
-
+  const isLightPage = location.pathname === "/contato" || location.pathname === "/sobre" || location.pathname === "/categorias" || location.pathname === "/cart";
   
-  // Classes condicionais baseadas no tema
   const navClasses = isLightPage 
     ? "glass-light border-[#cbd5e1]/30 text-brand-dark shadow-xl" 
     : "glass border-white/20 text-white shadow-2xl";
@@ -23,13 +18,8 @@ function NavBar() {
     ? "bg-brand-dark text-white shadow-brand-dark/20"
     : "bg-brand-light text-brand-dark shadow-brand-light/30";
 
-  const linkHoverClasses = isLightPage
-    ? "hover:text-brand-medium"
-    : "hover:text-brand-light";
-
-  const actionButtonHoverClasses = isLightPage
-    ? "hover:bg-brand-dark/5"
-    : "hover:bg-white/10";
+  const linkHoverClasses = isLightPage ? "hover:text-brand-medium" : "hover:text-brand-light";
+  const actionButtonHoverClasses = isLightPage ? "hover:bg-brand-dark/5" : "hover:bg-white/10";
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 p-4 transition-all duration-500">
@@ -45,7 +35,7 @@ function NavBar() {
           </span>
         </Link>
 
-        {/* Links (Desktop) */}
+        {/* Links */}
         <div className="hidden md:flex items-center gap-8 font-medium">
           <Link to="/" className={`transition-colors duration-300 ${linkHoverClasses}`}>Início</Link>
           <Link to="/cardapio" className={`transition-colors duration-300 ${linkHoverClasses}`}>Cardápio</Link>
@@ -56,21 +46,19 @@ function NavBar() {
 
         {/* Actions */}
         <div className="flex items-center gap-4">
-          <button className={`p-2 rounded-full transition-all duration-300 ${actionButtonHoverClasses}`}>
+          <Link to="/cart" className={`p-2 rounded-full relative transition-all duration-300 ${actionButtonHoverClasses}`}>
             <ShoppingCart size={24} weight="light" />
-          </button>
+            {quantidadeItens > 0 && (
+              <span className="absolute -top-1 -right-1 bg-brand-medium text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center border-2 border-white">
+                {quantidadeItens}
+              </span>
+            )}
+          </Link>
           <button className={`p-2 rounded-full transition-all duration-300 ${actionButtonHoverClasses}`}>
             <User size={24} weight="light" />
           </button>
           <button className={`md:hidden p-2 rounded-full transition-all duration-300 ${actionButtonHoverClasses}`}>
             <List size={24} />
-          </button>
-          <button className={`hidden lg:block px-6 py-2 rounded-xl font-bold hover:scale-105 transition-all duration-300 shadow-lg ${
-            isLightPage 
-            ? 'bg-brand-dark text-white shadow-brand-dark/20 hover:bg-brand-medium' 
-            : 'bg-brand-light text-brand-dark shadow-brand-light/20 hover:bg-white'
-          }`}>
-            Pedir Agora
           </button>
         </div>
       </div>
@@ -79,4 +67,3 @@ function NavBar() {
 }
 
 export default NavBar;
-

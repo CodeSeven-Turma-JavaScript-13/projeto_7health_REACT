@@ -2,6 +2,7 @@ import type Categoria from "./Categoria";
 import type Usuarios from "./Usuarios";
 
 export default interface Produtos {
+    foto: string;
     id:number;
     nome:string;
     descricao:string;

@@ -1,11 +1,39 @@
-import React from 'react';
-import { Search, Leaf, Heart, Zap, Link } from 'lucide-react';
+import { useContext, useEffect, useState } from 'react';
+import { Search, Leaf, Heart, Zap } from 'lucide-react';
+import { CartContext } from '../../components/carrinho/contexts/CartContext';
 import ModalProduto from '../../components/produto/modalproduto/ModalProduto';
 import ListarProduto from '../../components/produto/listarproduto/ListarProduto';
-
-
+import { buscar } from '../../services/Services';
+import type Produtos from '../../models/Produtos';
 
 function Cardapio() {
+  const { adicionarProduto } = useContext(CartContext);
+  const [destaque, setDestaque] = useState<Produtos | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  async function carregarDestaqueAleatorio() {
+    setLoading(true);
+    try {
+      // Criamos uma variável temporária para receber os dados da busca
+      const listaProdutos: Produtos[] = [];
+      await buscar('/produtos', (dados: Produtos[]) => {
+        if (dados.length > 0) {
+          // Lógica de sorteio: escolhe um índice aleatório entre 0 e o tamanho da lista
+          const indiceAleatorio = Math.floor(Math.random() * dados.length);
+          setDestaque(dados[indiceAleatorio]);
+        }
+      });
+    } catch (error) {
+      console.error("Erro ao carregar recomendação:", error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    carregarDestaqueAleatorio();
+  }, []); // Executa apenas uma vez ao montar o componente (ao atualizar a página)
+
   return (
     <div className="min-h-screen bg-[#f9fbf7] p-8 font-sans text-[#1a3c1a]">
       <div className="max-w-7xl mx-auto">
@@ -25,67 +53,78 @@ function Cardapio() {
           </div>
         </div>
 
-        {/* SEÇÃO DE DESTAQUE (HERO) */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
-          <div className="lg:col-span-2 relative rounded-[2rem] overflow-hidden shadow-2xl h-[450px]">
-            <img 
-              src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=1200" 
-              alt="Botanical Buddha Bowl" 
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 p-10 bg-gradient-to-t from-black/80 to-transparent w-full text-white">
-              <span className="bg-[#b5f49d] text-[#1a3c1a] text-xs font-bold px-3 py-1 rounded-full uppercase mb-4 inline-block">
-                Recomendação Botânica
-              </span>
-              <h2 className="text-4xl font-bold mb-2">Botanical Buddha Bowl</h2>
-              <p className="text-gray-200">Quinoa orgânica, beterrabas assadas e molho de deusa verde caseiro.</p>
+        {/* SEÇÃO DE DESTAQUE DINÂMICA (SORTEADA) */}
+        {!loading && destaque ? (
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20 animate-in fade-in duration-700">
+            {/* BANNER DE DESTAQUE */}
+            <div className="lg:col-span-2 relative rounded-[2rem] overflow-hidden shadow-2xl h-[450px] group">
+              <img 
+                src={destaque.imagem || "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=1200"} 
+                alt={destaque.nome} 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" 
+              />
+              <div className="absolute bottom-0 left-0 p-10 bg-gradient-to-t from-black/80 to-transparent w-full text-white">
+                <span className="bg-[#b5f49d] text-[#1a3c1a] text-xs font-bold px-3 py-1 rounded-full uppercase mb-4 inline-block shadow-lg">
+                  Sugestão do Momento
+                </span>
+                <h2 className="text-4xl font-bold mb-2">{destaque.nome}</h2>
+                <p className="text-gray-200 line-clamp-2 max-w-2xl">{destaque.descricao}</p>
+              </div>
+            </div>
+
+            {/* BOX LATERAL */}
+            <div className="bg-white p-10 rounded-[2rem] shadow-sm flex flex-col justify-between border border-gray-100 transform transition-all">
+              <div>
+                <h3 className="text-2xl font-bold mb-6 text-brand-dark">Por que hoje?</h3>
+                <ul className="space-y-6">
+                  <li className="flex gap-4">
+                    <div className="p-2 bg-brand-light/20 rounded-lg text-brand-medium"><Leaf size={24} /></div>
+                    <div>
+                      <p className="font-bold">Fresco e Natural</p>
+                      <p className="text-sm text-gray-500">Ingredientes de origem controlada.</p>
+                    </div>
+                  </li>
+                  <li className="flex gap-4">
+                    <div className="p-2 bg-brand-light/20 rounded-lg text-brand-medium"><Zap size={24} /></div>
+                    <div>
+                      <p className="font-bold">Poder Energético</p>
+                      <p className="text-sm text-gray-500">{destaque.caloria} kcal balanceadas.</p>
+                    </div>
+                  </li>
+                  <li className="flex gap-4">
+                    <div className="p-2 bg-brand-light/20 rounded-lg text-brand-medium"><Heart size={24} /></div>
+                    <div>
+                      <p className="font-bold">Sabor Único</p>
+                      <p className="text-sm text-gray-500">Aprovado por nutricionistas.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <button 
+                onClick={() => adicionarProduto(destaque)}
+                className="w-full bg-brand-dark text-white py-4 rounded-2xl font-bold hover:bg-brand-medium transition-all mt-8 shadow-xl shadow-brand-dark/20 hover:-translate-y-1 active:scale-95"
+              >
+                Adicionar ao Carrinho - {new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(destaque.preco)}
+              </button>
             </div>
           </div>
-
-          <div className="bg-white p-10 rounded-[2rem] shadow-sm flex flex-col justify-between border border-gray-100">
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Por que recomendamos?</h3>
-              <ul className="space-y-6">
-                <li className="flex gap-4">
-                  <div className="text-[#2d5a27]"><Leaf size={24} /></div>
-                  <div>
-                    <p className="font-bold">100% Ingredientes Orgânicos</p>
-                    <p className="text-sm text-gray-500">Direto de produtores locais nesta manhã.</p>
-                  </div>
-                </li>
-                <li className="flex gap-4">
-                  <div className="text-[#2d5a27]"><Heart size={24} /></div>
-                  <div>
-                    <p className="font-bold">Rico em Nutrientes</p>
-                    <p className="text-sm text-gray-500">Alto teor de antioxidantes e vitaminas essenciais.</p>
-                  </div>
-                </li>
-                <li className="flex gap-4">
-                  <div className="text-[#2d5a27]"><Zap size={24} /></div>
-                  <div>
-                    <p className="font-bold">Alto Índice de Energia</p>
-                    <p className="text-sm text-gray-500">Carboidratos complexos para foco sustentado.</p>
-                  </div>
-                </li>
-              </ul>
+        ) : (
+            // Placeholder enquanto carrega ou se não houver produtos
+            <div className="h-[450px] mb-20 bg-gray-100 rounded-[2rem] animate-pulse flex items-center justify-center">
+                <p className="text-gray-400 font-medium">Sorteando sua próxima refeição...</p>
             </div>
-            <a href="/contato" >
-            <button className="w-full bg-[#1a3c1a] text-white py-4 rounded-2xl font-bold hover:bg-[#2d5a27] transition-all mt-8">
-                Adicionar ao Plano            
-            </button>
-           </a>
-          </div>
-        </div>
+        )}
 
-        <div className="flex justify-between items-end mb-12">
+        {/* GERENCIAMENTO E LISTA GERAL */}
+        <div className="flex justify-between items-end mb-12 border-b border-gray-100 pb-6">
           <div>
-            <h2 className="text-3xl font-bold text-brand-dark">Gerenciar Menu</h2>
-            <p className="text-[#4a5c4a]">Gestão das ofertas da sua cozinha Fitness.</p>
+            <h2 className="text-3xl font-bold text-brand-dark">Explore o Menu</h2>
+            <p className="text-[#4a5c4a]">Tudo o que você precisa para uma rotina saudável.</p>
           </div>
           <ModalProduto />
         </div>
 
-        {/* LISTAGEM DE PRODUTOS */}
         <ListarProduto />
       </div>
     </div>

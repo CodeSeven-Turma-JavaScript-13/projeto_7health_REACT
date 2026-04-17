@@ -94,7 +94,7 @@ function FormProduto({ onSuccess }: FormProdutoProps) {
   const carregandoCategoria = produto.categoria?.id === 0;
 
   return (
-    <div className="min-h-screen bg-[#f9fbf7] flex flex-col items-center justify-center p-4">
+    <div className="container flex flex-col mx-auto items-center justify-center p-4">
       <h1 className="text-4xl font-bold text-center my-8 text-brand-dark">
         {id !== undefined ? "Editar Produto" : "Cadastrar Produto"}
       </h1>

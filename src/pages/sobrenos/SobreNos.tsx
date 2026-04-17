@@ -10,7 +10,7 @@ function SobreNos() {
     { url: "https://ik.imagekit.io/adb7vrzkj/projeto2/1774478509648.jpg", name: "Ana" },
     { url: "https://ik.imagekit.io/adb7vrzkj/projeto2/1775165408561.jpg", name: "Daniella" },
     { url: "https://ik.imagekit.io/adb7vrzkj/projeto2/1769166493242.jpg", name: "João" },
-    { url: "https://ik.imagekit.io/adb7vrzkj/projeto2/Matheus_Canellas_6.JPG", name: "Matheus" }
+    {url: "https://ik.imagekit.io/adb7vrzkj/Insta/image.png", name: "Matheus"}
   ];
 
   return (
@@ -25,8 +25,8 @@ function SobreNos() {
             Cultivando o Futuro do Bem-estar.
           </h1>
           <p className="text-[#4a5c4a] text-lg leading-relaxed max-w-xl">
-            Na 7Health, misturamos tecnologia de ponta para criar uma relação simbiótica entre seu corpo e seu companheiro de saúde digital.
-          </p>
+            
+          </p>Sua disciplina merece uma tecnologia à altura. Na 7Health, eliminamos a contagem manual e o estresse da cozinha para que você foque apenas no seu movimento. Somos o sistema operacional do seu estilo de vida fitness: nutrição botânica precisa, entregue com a velocidade que sua rotina exige. Deixe o algoritmo cuidar dos detalhes, enquanto você desfruta da sua melhor versão.
         </div>
         <div className="flex-1">
           <img 
