@@ -7,7 +7,7 @@ function SobreNos() {
     { url: "https://ik.imagekit.io/adb7vrzkj/projeto2/1772737559675.jpg", name: "Larissa" },
     { url: "https://ik.imagekit.io/adb7vrzkj/projeto2/1718479755722.jpg", name: "Júlia" },
     { url: "https://ik.imagekit.io/adb7vrzkj/projeto2/1775153291702.jpg", name: "Lucas" },
-    { url: "https://ik.imagekit.io/adb7vrzkj/projeto2/1774478509648.jpg", name: "Ana" },
+    { url: "https://ik.imagekit.io/o02kjfcyy/Integrantes%20Code7/Ana_Beatriz-removebg-preview-removebg-preview1.png", name: "Ana" },
     { url: "https://ik.imagekit.io/adb7vrzkj/projeto2/1775165408561.jpg", name: "Daniella" },
     { url: "https://ik.imagekit.io/adb7vrzkj/projeto2/1769166493242.jpg", name: "João" },
     {url: "https://ik.imagekit.io/adb7vrzkj/Insta/image.png", name: "Matheus"}
