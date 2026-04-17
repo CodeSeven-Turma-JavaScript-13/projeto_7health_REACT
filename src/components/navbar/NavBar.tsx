@@ -1,10 +1,16 @@
 import { Leaf, List, ShoppingCart, User } from "@phosphor-icons/react";
 import { Link, useLocation } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../carrinho/contexts/CartContext";
+import ContatoModal from "../../pages/contatos/ContatoModal";
+
 
 
 function NavBar() {
+
+    // Estado que controla se o modal está aberto ou fechado
+  const [abrirContato, setAbrirContato] = useState(false);
+
   const location = useLocation();
   const { quantidadeItens } = useContext(CartContext);
   
@@ -22,6 +28,7 @@ function NavBar() {
   const actionButtonHoverClasses = isLightPage ? "hover:bg-brand-dark/5" : "hover:bg-white/10";
 
   return (
+    <>
     <nav className="fixed top-0 left-0 right-0 z-50 p-4 transition-all duration-500">
       <div className={`max-w-7xl mx-auto rounded-2xl px-6 py-3 flex items-center justify-between transition-all duration-500 ${navClasses}`}>
         {/* Logo */}
@@ -41,7 +48,17 @@ function NavBar() {
           <Link to="/cardapio" className={`transition-colors duration-300 ${linkHoverClasses}`}>Cardápio</Link>
           <Link to="/categorias" className={`transition-colors duration-300 ${linkHoverClasses}`}>Categorias</Link>
           <Link to="/sobre" className={`transition-colors duration-300 ${linkHoverClasses}`}>Sobre Nós</Link>
-          <Link to="/contato" className={`transition-colors duration-300 ${linkHoverClasses}`}>Contato</Link>
+
+           {/* 
+              Aqui o contato deixa de ser Link
+              e passa a ser um botão que abre o modal
+            */}
+            <button
+              onClick={() => setAbrirContato(true)}
+              className={`bg-transparent border-none cursor-pointer transition-colors duration-300 ${linkHoverClasses}`}
+            >
+              Contato
+            </button>
         </div>
 
         {/* Actions */}
@@ -63,7 +80,22 @@ function NavBar() {
         </div>
       </div>
     </nav>
+
+
+      {/* 
+        Aqui o modal é renderizado fora da nav
+        Ele recebe:
+        - isOpen: para saber se deve aparecer
+        - onClose: função para fechar
+      */}
+      <ContatoModal
+        isOpen={abrirContato}
+        onClose={() => setAbrirContato(false)}
+      />
+    </>
+
   );
 }
 
 export default NavBar;
+
