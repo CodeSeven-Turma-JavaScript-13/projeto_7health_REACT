@@ -1,73 +1,168 @@
-# React + TypeScript + Vite
+# 🌱 7HEALTH - (Seven Health) 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O **7Health** é um aplicativo de delivery fitness desenvolvido para pessoas que buscam manter uma alimentação saudável e equilibrada no dia a dia. A plataforma funciona como um elo entre o usuário e opções nutritivas, facilitando a escolha de refeições saudáveis mesmo em rotinas corridas.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+  <div align="center">
+  	<img src="https://ik.imagekit.io/o02kjfcyy/Integrantes%20Code7/download.png" title="source: imagekit.io" width="20%"/>
+  </div>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Funcionalidades
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+✨ **Catálogo de recomendações de refeições:** encontre sugestões de refeições  
+🤝 **Pedido de marmita Fitness:** faça seu pedido delivery  (sumulado ainda)  
+🏆 **Conexão com o 7fit:** acesso ao site do 7fit aplicação   
+📅 **Aba de categorias:** Explore os tipos de categorias 
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+ 
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+
+
+
+📌 Home
+
+<div align="center">
+  	<img src="https://ik.imagekit.io/o02kjfcyy/Integrantes%20Code7/Captura%20de%20tela%202026-04-17%20182805.png" title="source: imagekit.io" width="100%"/>
+  </div>
+
+
+
+
+
+📌 Cardápios de recomendações (Funcionalidade especial)
+
+<div align="center">
+  	<img src="https://ik.imagekit.io/o02kjfcyy/Integrantes%20Code7/image%20(2).png" width="100%"/>
+  </div>
+
+
+
+
+
+
+
+## 🛠️ Tecnologias Utilizadas
+
+- React
+
+- TypeScript
+
+- Vite
+
+- CSS / Tailwind 
+
+- React Router DOM
+
+  
+
+# 📁 Estrutura de Pastas
+
+```
+📦 projeto_7health_REACT
+├── 📁 public
+├── 📁 src
+│   ├── 📁 assets
+│   ├── 📁 components
+│   │   ├── 📁 carrinho
+│   │   ├── 📁 carrossel
+│   │   ├── 📁 categoria
+│   │   ├── 📁 footer
+│   │   ├── 📁 navbar
+│   │   └── 📁 produto
+│   ├── 📁 models
+│   │   ├── Categoria.ts
+│   │   ├── Produtos.ts
+│   │   └── Usuarios.ts
+│   ├── 📁 pages
+│   │   ├── 📁 cardapio
+│   │   ├── 📁 contatos
+│   │   ├── 📁 home
+│   │   └── 📁 sobrenos
+│   ├── 📁 services
+│   │   └── Services.ts
+│   ├── 📁 util
+│   ├── App.css
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
+├── .gitignore
+├── README.md
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# 🔗Clone o repositório
+
+git clone https://github.com/CodeSeven-Turma-JavaScript-13/projeto_7health_REACT.git
+
+# 📁 Acesse a pasta
+
+cd projeto_7health_REACT
+
+# 📥 Instale as dependências
+
+npm install
+
+# 📀 Rode o projeto
+
+npm run dev
+
+O projeto estará disponível em:
+👉 http://localhost:5173/
+
+
+
+# 🎯 Objetivo
+
+O objetivo central é ser um aliado na saúde do usuário, oferecendo pratos pensados para quem pratica atividades físicas ou deseja melhorar seus hábitos alimentares através de uma interface simples e intuitiva.
+
+
+
+###   Principais Objetivos:
+
+- Conectar usuários a opções de comidas fitness e saudáveis.
+
+- Facilitar a escolha de refeições que equilibram sabor, praticidade e valor nutricional.
+
+- Proporcionar uma plataforma prática para quem busca melhorar a alimentação.
+
+  
+
+## 📌 Próximos Passos
+
+- Chat Nutricional
+
+- Cadastro de usuários
+
+- IA de Recomendações
+
+- App Nativo
+
+- Planos de fidelidade
+
+- Busca de restaurantes próximos com base na localização do usuário
+
+  
+
+## 🤝 Contribuição
+
+- Sinta-se à vontade para contribuir com melhorias!
+
+- Basta abrir uma issue ou enviar um pull request 🚀
+
+  
+
+# 📄 Licença
+
+Este projeto está sob a licença da code7.
