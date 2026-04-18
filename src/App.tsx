@@ -15,6 +15,7 @@ import { CartProvider } from "./components/carrinho/contexts/CartContext";
 import Cart from "./components/carrinho/cart/Cart";
 import { ToastContainer } from "react-toastify";
 
+
 function App() {
   return (
     
