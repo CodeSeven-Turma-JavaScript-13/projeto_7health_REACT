@@ -98,7 +98,7 @@ function FormCategoria() {
             placeholder="Descreva a essência desta categoria..."
             name="descricao"
             required
-            className="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-brand-dark focus:ring-2 focus:ring-[#b5f49d] outline-none transition-all min-h-[120px] placeholder:text-slate-300"
+            className="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-brand-dark focus:ring-2 focus:ring-[#b5f49d] outline-none transition-all min-h-30 placeholder:text-slate-300"
           />
         </div>
 

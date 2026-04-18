@@ -9,7 +9,7 @@ interface CardCategoriaProps {
 
 function CardCategoria({ categoria }: CardCategoriaProps) {
   return (
-    <div className="group bg-white border border-gray-100 rounded-[2rem] overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col h-full shadow-sm p-8">
+    <div className="group bg-white border border-gray-100 rounded-4xl overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col h-full shadow-sm p-8">
       <div className="flex justify-between items-start mb-6">
         <div className="flex flex-col">
             <span className="text-[10px] font-bold text-brand-medium uppercase tracking-widest mb-1">Categoria</span>
@@ -33,7 +33,7 @@ function CardCategoria({ categoria }: CardCategoriaProps) {
         </div>
       </div>
 
-      <div className="flex-grow">
+      <div className="grow">
         <p className="text-[#4a5c4a] leading-relaxed italic">
           "{categoria.descricao}"
         </p>

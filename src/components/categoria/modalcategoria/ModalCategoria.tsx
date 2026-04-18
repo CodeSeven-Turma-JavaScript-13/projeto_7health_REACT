@@ -20,7 +20,7 @@ function ModalCategoria() {
 
       {/* Backdrop e Modal */}
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-100 flex items-center justify-center p-4">
           {/* Backdrop com blur */}
           <div 
             className="absolute inset-0 bg-brand-dark/40 backdrop-blur-md transition-opacity duration-300"
