@@ -1,9 +1,9 @@
-import { Leaf, List, ShoppingCart, User, UserIcon } from "@phosphor-icons/react";
+import { LeafIcon, ListIcon,  ShoppingCartIcon,  UserIcon } from "@phosphor-icons/react";
 import { Link, useLocation } from "react-router-dom";
 import { useContext, useState } from "react";
 import { CartContext } from "../carrinho/contexts/CartContext";
 import ContatoModal from "../../pages/contatos/ContatoModal";
-import { LeafIcon, ListIcon, ShoppingCartIcon } from "lucide-react";
+
 
 function NavBar() {
   // Estado que controla se o modal de contato está aberto
@@ -51,7 +51,7 @@ function NavBar() {
                 className={`w-10 h-10 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300 ${logoBoxClasses}`}
               >
                 <span className="font-bold text-xl leading-none">7</span>
-                <Leaf className="w-4 h-4 -ml-1 mt-1" weight="fill" />
+                <LeafIcon className="w-4 h-4 -ml-1 mt-1" weight="fill" />
               </div>
 
               <span
@@ -108,7 +108,7 @@ function NavBar() {
                 to="/cart"
                 className={`p-2 rounded-full relative transition-all duration-300 ${actionButtonHoverClasses}`}
               >
-                <ShoppingCart size={24} weight="light" />
+                <ShoppingCartIcon size={24} weight="light" />
 
                 {quantidadeItens > 0 && (
                   <span className="absolute -top-1 -right-1 bg-brand-medium text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center border-2 border-white">

@@ -1,4 +1,4 @@
-import { FacebookLogo, InstagramLogo, Leaf, TwitterLogo, YoutubeLogo } from "@phosphor-icons/react";
+import { FacebookLogoIcon, InstagramLogoIcon, LeafIcon, TwitterLogoIcon, YoutubeLogoIcon } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -13,7 +13,7 @@ function Footer() {
             <Link to="/" className="flex items-center gap-2">
               <div className="w-8 h-8 bg-brand-light rounded-lg flex items-center justify-center">
                 <span className="font-bold text-brand-dark leading-none">7</span>
-                <Leaf className="text-brand-dark w-3 h-3 -ml-0.5 mt-0.5" weight="fill" />
+                <LeafIcon className="text-brand-dark w-3 h-3 -ml-0.5 mt-0.5" weight="fill" />
               </div>
               <span className="text-xl font-bold tracking-tight">7Health</span>
             </Link>
@@ -22,16 +22,16 @@ function Footer() {
             </p>
             <div className="flex gap-4">
               <a href="#" className="p-2 bg-white/5 hover:bg-brand-light hover:text-brand-dark rounded-lg transition-all duration-300">
-                <InstagramLogo size={20} weight="fill" />
+                <InstagramLogoIcon size={20} weight="fill" />
               </a>
               <a href="#" className="p-2 bg-white/5 hover:bg-brand-light hover:text-brand-dark rounded-lg transition-all duration-300">
-                <FacebookLogo size={20} weight="fill" />
+                <FacebookLogoIcon size={20} weight="fill" />
               </a>
               <a href="#" className="p-2 bg-white/5 hover:bg-brand-light hover:text-brand-dark rounded-lg transition-all duration-300">
-                <TwitterLogo size={20} weight="fill" />
+                <TwitterLogoIcon size={20} weight="fill" />
               </a>
               <a href="#" className="p-2 bg-white/5 hover:bg-brand-light hover:text-brand-dark rounded-lg transition-all duration-300">
-                <YoutubeLogo size={20} weight="fill" />
+                <YoutubeLogoIcon size={20} weight="fill" />
               </a>
             </div>
           </div>
@@ -84,4 +84,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default Footer;
