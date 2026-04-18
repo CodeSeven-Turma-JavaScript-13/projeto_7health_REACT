@@ -1,6 +1,4 @@
-import { ChartLineUp, Clock, Leaf, Medal, RocketLaunchIcon } from "@phosphor-icons/react";
-import { LeafIcon } from "lucide-react";
-import { Link } from "react-router-dom";
+
 import Carrossel from "../../components/carrossel/Carrosel";
 import ListarProduto from "../../components/produto/listarproduto/ListarProduto";
 
