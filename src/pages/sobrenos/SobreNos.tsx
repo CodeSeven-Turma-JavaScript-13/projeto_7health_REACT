@@ -1,5 +1,5 @@
-import React from 'react';
-import { Leaf, Code, Smartphone, Users } from 'lucide-react';
+
+import {  Code, Smartphone, Users } from 'lucide-react';
 import { BarbellIcon } from '@phosphor-icons/react';
 
 function SobreNos() {

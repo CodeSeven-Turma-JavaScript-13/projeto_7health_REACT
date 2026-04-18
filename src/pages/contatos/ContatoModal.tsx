@@ -74,7 +74,7 @@ function ContatoModal({ isOpen, onClose }: ContatoModalProps) {
     {/* área de posicionamento */}
     <div className="min-h-full flex items-start justify-center px-4 py-4 sm:items-center sm:py-8">
       {/* modal */}
-      <div className="relative z-10 w-full max-w-4xl overflow-hidden rounded-[2rem] bg-[#f9fbf7] shadow-2xl">
+      <div className="relative z-10 w-full max-w-4xl overflow-hidden rounded-4xl bg-[#f9fbf7] shadow-2xl">
         
         {/* Botão de fechar */}
         <button
@@ -247,7 +247,7 @@ function ContatoModal({ isOpen, onClose }: ContatoModalProps) {
 
                 <button
                   type="submit"
-                  className="rounded-full bg-[#1a3c1a] px-8 py-4 text-sm font-bold text-white transition hover:bg-[#2d5a27] active:scale-95 cursor-pointer"
+                  className="rounded-full bg-[#1a3c1a] px-8 py-4 text-sm font-bold text-white transition hover:bg-brand-medium active:scale-95 cursor-pointer"
                 >
                   Enviar mensagem
                 </button>
