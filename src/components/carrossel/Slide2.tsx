@@ -1,6 +1,7 @@
-import { ChartLineUp } from '@phosphor-icons/react'
+
+import { ChartLineUpIcon } from '@phosphor-icons/react'
 import { Clock, Medal } from 'lucide-react'
-import React from 'react'
+
 
 function Slide2() {
   return (
@@ -18,7 +19,7 @@ function Slide2() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-8 rounded-3xl bg-brand-dark/5 hover:bg-brand-dark/10 transition-colors group">
               <div className="w-14 h-14 bg-brand-medium text-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Clock size={32} weight="duotone" />
+                <Clock size={32} height="duotone" />
               </div>
               <h3 className="text-2xl font-bold mb-4">Entrega Ultra Rápida</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -28,7 +29,7 @@ function Slide2() {
 
             <div className="p-8 rounded-3xl bg-brand-dark/5 hover:bg-brand-dark/10 transition-colors group">
               <div className="w-14 h-14 bg-brand-medium text-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Medal size={32} weight="duotone" />
+                <Medal size={32} height="duotone" />
               </div>
               <h3 className="text-2xl font-bold mb-4">Qualidade Premium</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -38,7 +39,7 @@ function Slide2() {
 
             <div className="p-8 rounded-3xl bg-brand-dark/5 hover:bg-brand-dark/10 transition-colors group">
               <div className="w-14 h-14 bg-brand-medium text-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <ChartLineUp size={32} weight="duotone" />
+                <ChartLineUpIcon size={32} weight="duotone" />
               </div>
               <h3 className="text-2xl font-bold mb-4">Foco em Resultados</h3>
               <p className="text-gray-600 leading-relaxed">

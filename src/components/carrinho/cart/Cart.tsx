@@ -49,7 +49,7 @@ export default function Cart() {
                         >
                           <Minus size={16} />
                         </button>
-                        <span className="px-4 font-bold text-brand-dark min-w-[40px] text-center">
+                        <span className="px-4 font-bold text-brand-dark min-w-10 text-center">
                           {item.quantidade}
                         </span>
                         <button 
@@ -82,7 +82,7 @@ export default function Cart() {
                   <button onClick={limparCarrinho} className="flex-1 px-6 py-4 border-2 border-gray-200 text-gray-500 font-bold rounded-2xl hover:bg-gray-50 transition-all">
                     Limpar Tudo
                   </button>
-                  <button className="flex-[2] px-6 py-4 bg-brand-dark text-white font-bold rounded-2xl hover:bg-brand-medium shadow-lg transition-all">
+                  <button className="flex-2 px-6 py-4 bg-brand-dark text-white font-bold rounded-2xl hover:bg-brand-medium shadow-lg transition-all">
                     Finalizar Pedido
                   </button>
                 </div>

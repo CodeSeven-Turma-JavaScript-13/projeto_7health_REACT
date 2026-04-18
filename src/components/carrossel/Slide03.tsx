@@ -1,13 +1,13 @@
-import { Leaf } from '@phosphor-icons/react'
-import React from 'react'
+import { LeafIcon } from '@phosphor-icons/react'
+
 
 function Slide03() {
   return (
     <>
     {/* CTA Section */}
-      <section className="py-24 pb-32 min-h-[600px] bg-brand-medium relative overflow-hidden">
+      <section className="py-24 pb-32 min-h-150 bg-brand-medium relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-10">
-          <Leaf size={400} weight="fill" className="rotate-45 translate-x-1/2" />
+          <LeafIcon size={400} weight="fill" className="rotate-45 translate-x-1/2" />
         </div>
         
         <div className="max-w-7xl mx-auto mt-16 px-4 text-center relative z-10">
